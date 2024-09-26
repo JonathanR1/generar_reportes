@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mobilefirst.css">
+    <link rel="stylesheet" href="diseno.css">
+    <link rel="stylesheet" href="disenoPestanas.css">
+    <title>Generador de resportes ISSS v1.02</title>
+</head>
+<body>
+    <center><h1>Reporte de Quimicos</h1>
+    <h2>Seccion de lavanderia</h2></center>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>     </th>
+                <th>PRELAVADOR</th>
+                <th>DETERGENTE</th>
+                <th>CLORO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>QUIMICOS RECIBIDOS</td>
+                <td><input type="number" id="prelavador_rec" placeholder="Prelavador"></td>
+                <td><input type="number" id="detergente_rec" placeholder="detergente"></td>
+                <td><input type="number" id="cloro_rec" placeholder="cloro"></td>
+            </tr>
+            <tr>
+                <td>QUIMICOS EXISTENTES</td>
+                <td><input type="number" id="prelavador_exi" placeholder="Prelavador"></td>
+                <td><input type="number" id="detergente_exi" placeholder="detergente"></td>
+                <td><input type="number" id="cloro_exi" placeholder="cloro"></td>
+            </tr>
+
+            <tr>
+                <td>QUIMICOS UTILIZADOS</td>
+                <td id="prelavador_util">Resultado 1</td>
+                <td id="detergente_util">Resultado 2</td>
+                <td id="cloro_util">Resultado 3</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+    <button id="miBoton">calcular quimicos</button>
+    
+    <hr>
+    <h2>Quimicos utilizador por dia</h2>
+    <input type="number" id="Ndiasinput" placeholder="ingrese el numero de dias a calcular">
+    <button id="Ndias" onclick="generateTabs()">calcular quimicos por dia</button>
+    <br>
+    
+
+    <table id="tablaDias">
+        <thead>
+            <tr>
+                <th>DÍA</th>
+                <th>PRELAVADOR</th>
+                <th>DETERGENTE</th>
+                <th>CLORO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se generarán dinámicamente las filas -->
+        </tbody>
+    </table>
+    
+    <!-- Aquí se generarán dinámicamente las pestañas -->
+    <div class="container">
+        <h1>generador de reportes por dias</h1>
+        <!-- Contenedor de las pestañas -->
+        <div id="tabsContainer" class="tabs"></div>
+        
+        <!-- Contenedor de los contenidos de pestañas -->
+        <div id="tabsContentContainer">
+
+
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

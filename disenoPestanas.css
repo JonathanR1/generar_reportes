@@ -1,0 +1,28 @@
+/* Estilos para las pestañas */
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgray;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.tab:hover {
+    background-color: darkgray;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+/* Mostrar el contenido de la pestaña activa */
+.active-tab {
+    display: block;
+}
+
+.active-button {
+    background-color: gray;
+}

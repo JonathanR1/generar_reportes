@@ -1,0 +1,63 @@
+/* diseno.css */
+
+/* Estilos base (para móviles) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    margin: 1em;
+}
+
+.container {
+    width: 100%;
+    padding: 1em;
+}
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 768px) {
+    table {
+        width: 80%;
+        margin: auto;
+    }
+
+    input, button {
+        width: auto;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    table {
+        width: 70%;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+}
