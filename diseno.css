@@ -12,3 +12,9 @@ th, td {
 th {
     background-color: #f2f2f2; /* Color de fondo para encabezados */
 }
+
+#fechaHora { /*Estilo para la fecha y hora que se muestra en la página*/
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
