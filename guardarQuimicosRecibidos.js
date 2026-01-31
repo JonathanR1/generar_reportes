@@ -2,8 +2,10 @@ const URL = "https://script.google.com/macros/s/AKfycbwqZWea-ddFjgcm-enCNnKHycaG
 
 function guardarQR() {
 
+  const ahora = new Date();
+
   const data = {
-    fecha: document.getElementById("fecha").value,
+    fecha: ahora.toISOString(),   // 👈 formato ideal para Sheets
     prelavador: document.getElementById("prelavador_rec").value,
     detergente: document.getElementById("detergente_rec").value,
     cloro: document.getElementById("cloro_rec").value
@@ -22,3 +24,4 @@ function guardarQR() {
     alert("Error al guardar ❌");
   });
 }
+
