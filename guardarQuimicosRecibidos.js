@@ -4,8 +4,14 @@ function guardarQR() {
 
   const ahora = new Date();
 
+  const dia  = String(ahora.getDate()).padStart(2, "0");
+  const mes  = String(ahora.getMonth() + 1).padStart(2, "0");
+  const anio = ahora.getFullYear();
+
+  const fechaBonita = `${dia}/${mes}/${anio}`;
+
   const data = {
-    fecha: ahora.toISOString(),
+    fecha: fechaBonita,
     prelavador: document.getElementById("prelavador_rec").value,
     detergente: document.getElementById("detergente_rec").value,
     cloro: document.getElementById("cloro_rec").value
@@ -22,4 +28,3 @@ function guardarQR() {
 
   alert("Guardado correctamente ✅");
 }
-
