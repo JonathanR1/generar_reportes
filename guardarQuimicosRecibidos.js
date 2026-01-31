@@ -13,9 +13,9 @@ function guardarQR() {
   const data = {
     tipo: "recibidos",
     fecha: fechaBonita,
-    prelavador: document.getElementById("prelavador_rec").textContent,
-    detergente: document.getElementById("detergente_rec").textContent,
-    cloro: document.getElementById("cloro_rec").textContent
+    prelavador: document.getElementById("prelavador_rec").value,
+    detergente: document.getElementById("detergente_rec").value,
+    cloro: document.getElementById("cloro_rec").value
   };
 
   fetch(URL, {
@@ -73,9 +73,9 @@ function guardarQU() {
   const data = {
     tipo: "utilizados",
     fecha: fechaBonita,
-    prelavador: document.getElementById("prelavador_exi").value,
-    detergente: document.getElementById("detergente_exi").value,
-    cloro: document.getElementById("cloro_exi").value
+    prelavador: document.getElementById("prelavador_exi").textContent,
+    detergente: document.getElementById("detergente_exi").textContent,
+    cloro: document.getElementById("cloro_exi").textContent
   };
 
   fetch(URL, {
