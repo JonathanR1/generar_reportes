@@ -12,16 +12,16 @@ function guardarQR() {
   };
 
   fetch(URL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(r => r.json())
-  .then(res => {
-    alert("Guardado correctamente ✅");
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Error al guardar ❌");
-  });
+  method: "POST",
+  mode: "no-cors",
+  body: JSON.stringify(data)
+})
+.then(() => {
+  alert("Guardado correctamente ✅");
+})
+.catch(err => {
+  console.error(err);
+  alert("Error al guardar ❌");
+});
 }
 
