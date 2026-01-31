@@ -90,3 +90,12 @@ function guardarQU() {
   alert("Guardado correctamente ✅");
 }
 
+function guardarTodo() {
+
+  guardarQR();
+  guardarQE();
+  guardarQU();
+
+}
+
+
