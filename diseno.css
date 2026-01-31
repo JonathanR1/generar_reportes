@@ -1,6 +1,10 @@
 table {
     width: 100%;
-    border-collapse: collapse; /* Elimina el espacio entre celdas */
+    /* Elimina el espacio entre celdas */
+}
+
+.table-container {
+  overflow-x: auto;
 }
 
 th, td {
@@ -14,9 +18,9 @@ th {
 }
 
 #fechaHora { 
-  font-size: 50px;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: 1px;
-    /*Estilo para la fecha y hora que se muestra en la página*/
 }
+
 
