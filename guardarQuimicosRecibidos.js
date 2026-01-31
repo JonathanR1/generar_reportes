@@ -5,23 +5,21 @@ function guardarQR() {
   const ahora = new Date();
 
   const data = {
-    fecha: ahora.toISOString(),   // 👈 formato ideal para Sheets
+    fecha: ahora.toISOString(),
     prelavador: document.getElementById("prelavador_rec").value,
     detergente: document.getElementById("detergente_rec").value,
     cloro: document.getElementById("cloro_rec").value
   };
 
   fetch(URL, {
-  method: "POST",
-  mode: "no-cors",
-  body: JSON.stringify(data)
-})
-.then(() => {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(data)
+  });
+
   alert("Guardado correctamente ✅");
-})
-.catch(err => {
-  console.error(err);
-  alert("Error al guardar ❌");
-});
 }
 
