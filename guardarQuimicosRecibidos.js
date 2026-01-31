@@ -73,9 +73,9 @@ function guardarQU() {
   const data = {
     tipo: "utilizados",
     fecha: fechaBonita,
-    prelavador: document.getElementById("prelavador_exi").textContent,
-    detergente: document.getElementById("detergente_exi").textContent,
-    cloro: document.getElementById("cloro_exi").textContent
+    prelavador: document.getElementById("prelavador_util").textContent,
+    detergente: document.getElementById("detergente_util").textContent,
+    cloro: document.getElementById("cloro_util").textContent
   };
 
   fetch(URL, {
