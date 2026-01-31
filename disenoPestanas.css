@@ -1,6 +1,6 @@
 /* Estilos para las pestañas */
 .tab {
-    display: inline-block;
+    display: block;
     padding: 10px 20px;
     background-color: lightgray;
     cursor: pointer;
@@ -26,3 +26,4 @@
 .active-button {
     background-color: gray;
 }
+
