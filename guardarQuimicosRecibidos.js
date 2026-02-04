@@ -1,4 +1,4 @@
-const URL = "https://script.google.com/macros/s/AKfycbwqZWea-ddFjgcm-enCNnKHycaGKkA7_oT4uV6MzU9zdMPpPlbzERY4m5PWhhKwlUSo/exec";
+const URL = "https://script.google.com/macros/s/AKfycbw0RmSLSo-xCshLuz7hYTPOPKzvlSBfaBszdGrzECzvo2l7roemoo2yRQfEUeZU4Hn2QQ/exec";
 
 function guardarQR() {
 
