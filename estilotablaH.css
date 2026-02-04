@@ -1,0 +1,44 @@
+<style>
+.tabla-container{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  padding:12px;
+  overflow-x:auto;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+#tabla{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+#tabla tr:first-child{
+  background:#FFF4B8; /* encabezado amarillo suave */
+  font-weight:600;
+}
+
+#tabla th,
+#tabla td{
+  padding:10px 12px;
+  text-align:left;
+  border-bottom:1px solid #eee;
+}
+
+#tabla tr:not(:first-child):hover{
+  background:#f6f8ff;
+}
+
+/* columna de operaciones */
+.opciones{
+  display:flex;
+  gap:10px;
+}
+
+.opciones span{
+  cursor:pointer;
+  color:#666;
+  font-size:16px;
+}
+</style>
