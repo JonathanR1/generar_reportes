@@ -9,38 +9,47 @@ const loaderText = document.getElementById("loaderText");
 btn.addEventListener("click", cargar);
 
 function cargar() {
-
   const tipo = select.value;
 
   loader.style.display = "block";
   loaderText.style.display = "block";
-  loaderText.textContent = "Cargando hoja: " + tipo + "...";
+
+  // Mensajes que cambiarán cada 2 segundos
+  const mensajes = [
+    "Cargando hoja: " + tipo + "...",
+    "Está tardando más de lo esperado... por favor espere"
+  ];
+  let indice = 0;
+  loaderText.textContent = mensajes[indice];
+
+  // Intervalo para cambiar los mensajes
+  const intervalo = setInterval(() => {
+    indice = (indice + 1) % mensajes.length;
+    loaderText.textContent = mensajes[indice];
+  }, 2000);
+
   tabla.innerHTML = "";
 
   fetch(URL + "?tipo=" + tipo)
     .then(r => r.json())
     .then(data => {
-
+      clearInterval(intervalo); // detiene el cambio de mensajes
       loader.style.display = "none";
       loaderText.style.display = "none";
+
       data.forEach((fila, i) => {
-
         const tr = document.createElement("tr");
-
         fila.forEach(celda => {
-
           const celdaHtml = document.createElement(i === 0 ? "th" : "td");
           celdaHtml.textContent = celda;
           tr.appendChild(celdaHtml);
-
         });
-
         tabla.appendChild(tr);
-
       });
 
     })
     .catch(err => {
+      clearInterval(intervalo); // también detener si hay error
       loader.style.display = "none";
       alert("Error cargando datos");
     });
