@@ -3,6 +3,7 @@ const URL = "https://script.google.com/macros/s/AKfycbw0RmSLSo-xCshLuz7hYTPOPKzv
 const btn = document.getElementById("cargar");
 const select = document.getElementById("tipo");
 const tabla = document.getElementById("tabla");
+const loader = document.getElementById("loader");
 
 btn.addEventListener("click", cargar);
 
@@ -10,20 +11,25 @@ function cargar() {
 
   const tipo = select.value;
 
+  loader.style.display = "block";
+  tabla.innerHTML = "";
+
   fetch(URL + "?tipo=" + tipo)
     .then(r => r.json())
     .then(data => {
 
-      tabla.innerHTML = "";
+      loader.style.display = "none";
 
-      data.forEach(fila => {
+      data.forEach((fila, i) => {
 
         const tr = document.createElement("tr");
 
         fila.forEach(celda => {
-          const td = document.createElement("td");
-          td.textContent = celda;
-          tr.appendChild(td);
+
+          const celdaHtml = document.createElement(i === 0 ? "th" : "td");
+          celdaHtml.textContent = celda;
+          tr.appendChild(celdaHtml);
+
         });
 
         tabla.appendChild(tr);
@@ -32,7 +38,7 @@ function cargar() {
 
     })
     .catch(err => {
-      console.error(err);
+      loader.style.display = "none";
       alert("Error cargando datos");
     });
 }
