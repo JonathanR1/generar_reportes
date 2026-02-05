@@ -16,7 +16,7 @@ function cargar() {
 
   // Mensajes que cambiarán cada 2 segundos
   const mensajes = [
-    "Cargando hoja: " + tipo + "...",
+    "Cargando REPORTE DE QUIMICOS: " + tipo + "...",
     "Está tardando más de lo esperado... por favor espere"
   ];
   let indice = 0;
