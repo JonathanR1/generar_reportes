@@ -41,7 +41,16 @@ function cargar() {
         const tr = document.createElement("tr");
         fila.forEach(celda => {
           const celdaHtml = document.createElement(i === 0 ? "th" : "td");
-          celdaHtml.textContent = celda;
+          // Detectar si es fecha en formato ISO
+  if (typeof celda === "string" && /^\d{4}-\d{2}-\d{2}T/.test(celda)) {
+    const fecha = new Date(celda);
+    // Formato DD/MM/YYYY
+    celdaHtml.textContent = `${fecha.getDate().toString().padStart(2,'0')}/` +
+                            `${(fecha.getMonth()+1).toString().padStart(2,'0')}/` +
+                            `${fecha.getFullYear()}`;
+  } else {
+    celdaHtml.textContent = celda;
+  }
           tr.appendChild(celdaHtml);
         });
         tabla.appendChild(tr);
