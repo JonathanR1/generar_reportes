@@ -4,6 +4,7 @@ const btn = document.getElementById("cargar");
 const select = document.getElementById("tipo");
 const tabla = document.getElementById("tabla");
 const loader = document.getElementById("loader");
+const loaderText = document.getElementById("loaderText");
 
 btn.addEventListener("click", cargar);
 
@@ -12,6 +13,8 @@ function cargar() {
   const tipo = select.value;
 
   loader.style.display = "block";
+  loaderText.style.display = "block";
+
   tabla.innerHTML = "";
 
   fetch(URL + "?tipo=" + tipo)
@@ -19,7 +22,7 @@ function cargar() {
     .then(data => {
 
       loader.style.display = "none";
-
+      loaderText.style.display = "none";
       data.forEach((fila, i) => {
 
         const tr = document.createElement("tr");
