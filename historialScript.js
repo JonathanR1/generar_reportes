@@ -14,7 +14,7 @@ function cargar() {
 
   loader.style.display = "block";
   loaderText.style.display = "block";
-
+  loaderText.textContent = "Cargando hoja: " + tipo + "...";
   tabla.innerHTML = "";
 
   fetch(URL + "?tipo=" + tipo)
